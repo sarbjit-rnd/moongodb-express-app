@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if (errors) { %>
+    <div class="errors">
+      <% errors.forEach(function(error) { %>
+      <p><%= error.msg %></p>
+      <% }); %>
+    </div>
+    <% } %>
+    <form action="<%= action %>" method="POST">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="<%= name || '' %>">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" value="<%= email || '' %>">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+      </div>
+      <div>
+        <button type="submit">Save</button>
+      </div>
+    </form>
+  </body>
+</html>
